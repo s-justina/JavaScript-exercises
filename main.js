@@ -108,7 +108,7 @@ const removeDuplicate = ()=>{
 const word1 = "ala";
 const word2 = 'maam';
 const word3 = 'ajwu';
-const word4 = 'ajwuwja';
+const word4 = 'ajwuwJa';
 const word5 = 'ajwuwsaja';
 
 const checkIsPalindrom = (wordForCheck)=>{
@@ -133,7 +133,7 @@ const checkIsPalindrom = (wordForCheck)=>{
 
 const compareLetters = (leftSide, rightSide)=>{
     const resultOfChecking = leftSide.every((letter,i)=>{
-        return letter === rightSide[i]
+        return letter.toLowerCase() === rightSide[i].toLowerCase()
     });
     if(resultOfChecking){
         return console.log('to jest palindrom');
@@ -141,4 +141,6 @@ const compareLetters = (leftSide, rightSide)=>{
         return console.log('to NIE jest palindrom!!!!!!!!!!!')
     }
 };
-// checkIsPalindrom(word3);
+checkIsPalindrom(word4);
+
+// 9. Question: How will you remove duplicates of an array and return an array of only unique elements
