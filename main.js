@@ -8,7 +8,6 @@ let numbers = Array.from({length:21}).map((number,i)=>{
         return i
     }
 );
-
 const isPrime = (numberToCheck)=>{
     let isPrime = true;
     // liczby 1 i mniejsze nie są liczbami pierwszymi
@@ -25,10 +24,11 @@ const isPrime = (numberToCheck)=>{
     }
     return isPrime
 };
-
 const checkNumbers = numbers.map(number=>{
     return isPrime(number)
 });
+
+// console.log('answer ex 1: ', checkNumbers);
 
 // 2. Question: How could you find all prime factors of a number?
 // spośród wszystkich dzielników danej liczby, wypisz wszystkie dzielniki które są liczbami pierwszymi.
@@ -46,11 +46,14 @@ const findAllFactors = (numberToDivide)=>{
 };
 
 const allFactors = findAllFactors(10);
+
 // funkcja sprawdzająca czy wśród dzielników są liczby pierwsze
 // filter sprawdza warunek, jeżeli jest true to zwraca nam pożądaną wartość
 const filterPrimeNumbers = allFactors.filter(factor=>{
     return isPrime(factor)
 });
+
+// console.log('answer ex 2: ', filterPrimeNumbers);
 
 // 3. Question: How would you find the greatest common divisor of two numbers?
 // najwyższy wspólny dzielnik
@@ -68,19 +71,26 @@ const findSameDivisors = ()=>{
         }
     })
 };
+
 const sameDivisors = findSameDivisors();
-const GreatestDivisor = sameDivisors[sameDivisors.length-1];
+const GreatestDivisor = Math.max(...sameDivisors);
+// in this case we can use: // const GreatestDivisor = sameDivisors[sameDivisors.length-1];
+
+// console.log('answer ex 3: ', GreatestDivisor);
 
 // 4. Question: How would you reverse a string in JavaScript?
 
 let name= "Justyna";
 let reverseString = ()=> name.split('').reverse().join('');
 
+// console.log('answer ex 4: ', reverseString());
+
 // 5. Question: How would you reverse words in a sentence? Aka Yoda speech!
 
 let sentence = 'Aka Yoda speech';
 let reverseSentence = ()=>sentence.split(' ').reverse().join(' ');
-// reverseSentence()
+
+// console.log('answer ex 5: ', reverseSentence());
 
 // 6. Question: If you have a string like "I am the good boy".
 // How can you generate "I ma eht doog yob"?
@@ -93,13 +103,15 @@ let wordsInCorrectOrderReversed = wordsInCorrectOrder.map(word =>{
 });
 let resultToString = wordsInCorrectOrderReversed.join(' ');
 
+// console.log('answer ex 6: ', resultToString);
+
 // 7. Question: How will you remove duplicate characters from a sting?
 
 const duplicateCharString = "aaabbbsssss";
 const removeDuplicate = ()=>{
     const removedDuplicate = new Set(duplicateCharString.split(''));
     const removedDuplicateString= Array.from(removedDuplicate).join('');
-    return console.log('to jest zwracane z funkcji:', removedDuplicateString)
+    return console.log('answer ex 7: ', removedDuplicateString)
 };
 // removeDuplicate();
 
@@ -112,7 +124,7 @@ const word4 = 'ajwuwJa';
 const word5 = 'ajwuwsaja';
 
 const checkIsPalindrom = (wordForCheck)=>{
-    const checkLenghtOfWord = wordForCheck.split('').length;
+    const checkLenghtOfWord = wordForCheck.length;
     const half_length_up = Math.ceil(checkLenghtOfWord / 2);
     const half_length_down = Math.floor(checkLenghtOfWord / 2);
     const wholeWordForCheck = Array.from(wordForCheck);
@@ -136,11 +148,12 @@ const compareLetters = (leftSide, rightSide)=>{
         return letter.toLowerCase() === rightSide[i].toLowerCase()
     });
     if(resultOfChecking){
-        return console.log('to jest palindrom');
+        return console.log('answer ex 8: ', 'to jest palindrom');
     } else{
-        return console.log('to NIE jest palindrom!!!!!!!!!!!')
+        return console.log('answer ex 8: ', 'to NIE jest palindrom!!!!!!!!!!!')
     }
 };
-checkIsPalindrom(word4);
+// checkIsPalindrom(word5);
 
 // 9. Question: How will you remove duplicates of an array and return an array of only unique elements
+
