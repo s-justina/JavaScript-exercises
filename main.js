@@ -232,5 +232,19 @@ const findSummingTwoNumbers = (number, arrToCheck) => {
   }
   return properTwoNumbers;
 };
+// console.log("answer ex 13: ", findSummingTwoNumbers(givenNumber, unsortedArr2));
 
-console.log("answer ex 13: ", findSummingTwoNumbers(givenNumber, unsortedArr2));
+// 14. Question: I want this code to log out “doggo”, but it logs out undefined!
+let dog = {
+  name: "doggo",
+  sayName() {
+    console.log(this.name);
+    return this.name;
+  },
+};
+let sayName = dog.sayName;
+// sayName();
+//---------------------------------------------------------------------
+// We need to bind "this" to a dog object in this way:
+let sayName2 = dog.sayName.bind(dog);
+// console.log("answer ex 14: ", sayName2());
