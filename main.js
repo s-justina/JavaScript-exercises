@@ -160,8 +160,8 @@ const removedDuplicates = Array.from(new Set(arrayWithDuplicates));
 // console.log("answer ex 9: ", removedDuplicates);
 
 // 10. How would you merge two sorted array?
-const sorted1 = [0, 3, 7, 15, 14, 16, 19];
-const sorted2 = [1, 2, 5, 12, 18, 20, 21];
+const sorted1 = [0, 3, 7, 15, 14, 16, 18, 19];
+const sorted2 = [0,1, 2, 5, 12, 18, 20, 21];
 
 const bubbleSort = (arr) => {
     for (let i = 0; i < arr.length; i++) {
@@ -178,6 +178,6 @@ const bubbleSort = (arr) => {
 
 const mergeAndSortArrs = (arr1, arr2) => {
   const combineArrs = [...arr1, ...arr2];
-  return bubbleSort(combineArrs)
+  return Array.from(new Set(bubbleSort(combineArrs)))
 };
-// console.log("answer ex 10: ", mergeAndSortArrs(sorted1, sorted2));
+console.log("answer ex 10: ", mergeAndSortArrs(sorted1, sorted2));
