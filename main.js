@@ -212,5 +212,25 @@ const selectFirstNonRepeatedChar = (chars) => {
   }
   return firstLetter;
 };
-
 // console.log("answer ex 12: ", selectFirstNonRepeatedChar(repeatingChars));
+
+// 13. Question: From a unsorted array, check whether there are any two numbers that will sum up to a given number?
+const givenNumber = 9;
+const unsortedArr = [0, 1, 4, 7, 3, 11, 2, 4, 5]; // there is a pair
+const unsortedArr2 = [0, 1]; // there is no pair
+
+const findSummingTwoNumbers = (number, arrToCheck) => {
+  let properTwoNumbers = "There is no pair to sum up";
+  for (let i = 0; i < arrToCheck.length; i++) {
+    const acc = arrToCheck[i];
+    const needToFind = number - acc;
+    const possibleToSumUp = arrToCheck.find((num) => num === needToFind);
+    if (possibleToSumUp !== undefined) {
+      properTwoNumbers = [acc, needToFind];
+      break;
+    }
+  }
+  return properTwoNumbers;
+};
+
+console.log("answer ex 13: ", findSummingTwoNumbers(givenNumber, unsortedArr2));
