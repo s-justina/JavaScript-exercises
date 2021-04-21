@@ -182,14 +182,35 @@ const mergeAndSortArrs = (arr1, arr2) => {
 };
 // console.log("answer ex 10: ", mergeAndSortArrs(sorted1, sorted2));
 
-// 11.  Question: How would you swap two numbers without using a temporary variable?
+// 11. Question: How would you swap two numbers without using a temporary variable?
 
 let a = 0;
 let b = 100;
 
 const swapNumbers = (a, b) => {
+  //Bitwise operators
   a = a ^ b;
   b = b ^ a;
   return console.log("answer ex 11: ", "a =", a, "b = ", b);
 };
 // swapNumbers(a, b);
+
+// 12. Question: How could you find the first non repeating char in a string?
+const repeatingChars = "aabbbbaaassahopteaa";
+
+const selectFirstNonRepeatedChar = (chars) => {
+  const transformedToArr = repeatingChars.split("");
+  let firstLetter;
+
+  for (let i = 0; i < transformedToArr.length; i++) {
+    const acc = transformedToArr[i];
+    const letterOccurrencies = transformedToArr.filter((l) => l === acc);
+    if (letterOccurrencies.length === 1) {
+      firstLetter = acc;
+      break;
+    }
+  }
+  return firstLetter;
+};
+
+// console.log("answer ex 12: ", selectFirstNonRepeatedChar(repeatingChars));
