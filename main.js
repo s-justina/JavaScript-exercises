@@ -257,13 +257,52 @@ let sayName2 = dog.sayName.bind(dog);
 //     return 'hey arnold'
 //   }
 // }
-// console.log("answer ex 14: ", greet({ name: 'amy' }));
+// console.log("answer ex 15: ", greet({ name: 'amy' }));
 //---------------------------------------------------------------------
 // two objects are always different because of their references so we could transform the condition like this:
-function greet (person) {
-  if (person.name === 'amy') {
-    return 'hey amy'
+function greet(person) {
+  if (person.name === "amy") {
+    return "hey amy";
   } else {
-    return 'hey arnold'
+    return "hey arnold";
   }
 }
+
+// 16. Question: I want my dog to bark(), but instead, I get an error. Why?
+// function Dog(name) {
+//   this.name = name;
+// }
+// Dog.bark = function () {
+//   console.log(this.name + " says woof");
+// };
+// let fido = new Dog("fido");
+// fido.bark();
+//---------------------------------------------------------------------
+
+// we can add a method by prototype:
+// function Dog(name) {
+//   this.name = name;
+// }
+// Dog.prototype.bark = function () {
+//   console.log(this.name + " says woof");
+//   return this.name + " says woof";
+// };
+// let fido = new Dog("fido");
+//
+// console.log("answer ex 16: ", fido.bark());
+
+// or we could change it to class
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+  bark() {
+    console.log(this.name + " says woof");
+    return this.name + " says woof";
+  }
+}
+
+let sparky = new Dog("sparky");
+// console.log("answer ex 16: ", sparky.bark());
+
+// 17. Question: Suppose an array of numbers is given. Create method that creates a palindrome out of your array
