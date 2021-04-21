@@ -248,3 +248,22 @@ let sayName = dog.sayName;
 // We need to bind "this" to a dog object in this way:
 let sayName2 = dog.sayName.bind(dog);
 // console.log("answer ex 14: ", sayName2());
+
+// 15. Question: I want this code to log out “hey amy”, but it logs out “hey arnold” - why?
+// function greet (person) {
+//   if (person == { name: 'amy' }) {
+//     return 'hey amy'
+//   } else {
+//     return 'hey arnold'
+//   }
+// }
+// console.log("answer ex 14: ", greet({ name: 'amy' }));
+//---------------------------------------------------------------------
+// two objects are always different because of their references so we could transform the condition like this:
+function greet (person) {
+  if (person.name === 'amy') {
+    return 'hey amy'
+  } else {
+    return 'hey arnold'
+  }
+}
