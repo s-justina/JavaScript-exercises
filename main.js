@@ -305,4 +305,19 @@ class Dog {
 let sparky = new Dog("sparky");
 // console.log("answer ex 16: ", sparky.bark());
 
-// 17. Question: Suppose an array of numbers is given. Create method that creates a palindrome out of your array
+// 17. Question: Suppose an array of numbers is given. Create method that creates a palindrome out of your array.
+
+Array.prototype.toPalindrome = function () {
+  const result = this.slice();
+  for (let i = this.length - 2; i >= 0; --i) {
+    result.push(this[i]);
+  }
+  return result;
+};
+
+const arr = [1, 2, 3];
+
+const arr2 = arr.toPalindrome();
+
+const arr3 = arr2.toPalindrome();
+console.log("answer ex 17: ", arr3);
