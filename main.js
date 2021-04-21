@@ -159,25 +159,37 @@ const arrayWithDuplicates = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 const removedDuplicates = Array.from(new Set(arrayWithDuplicates));
 // console.log("answer ex 9: ", removedDuplicates);
 
-// 10. How would you merge two sorted array?
+// 10. Question: How would you merge two sorted array?
 const sorted1 = [0, 3, 7, 15, 14, 16, 18, 19];
-const sorted2 = [0,1, 2, 5, 12, 18, 20, 21];
+const sorted2 = [0, 1, 2, 5, 12, 18, 20, 21];
 
 const bubbleSort = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-      for (let j = 0; j < arr.length - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          const temporaryVal = arr[j + 1];
-          arr[j + 1] = arr[j];
-          arr[j] = temporaryVal;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        const temporaryVal = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = temporaryVal;
       }
     }
   }
-    return arr;
+  return arr;
 };
 
 const mergeAndSortArrs = (arr1, arr2) => {
   const combineArrs = [...arr1, ...arr2];
-  return Array.from(new Set(bubbleSort(combineArrs)))
+  return Array.from(new Set(bubbleSort(combineArrs)));
 };
-console.log("answer ex 10: ", mergeAndSortArrs(sorted1, sorted2));
+// console.log("answer ex 10: ", mergeAndSortArrs(sorted1, sorted2));
+
+// 11.  Question: How would you swap two numbers without using a temporary variable?
+
+let a = 0;
+let b = 100;
+
+const swapNumbers = (a, b) => {
+  a = a ^ b;
+  b = b ^ a;
+  return console.log("answer ex 11: ", "a =", a, "b = ", b);
+};
+// swapNumbers(a, b);
